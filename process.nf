@@ -5,11 +5,10 @@
 // #    GATK4 best practices            #
 // #    Pipeline that performs:         #
 // #    - mapping to reference          #
-// #    - sorting reads		              #
+// #    - sorting reads		        #
 // #    - removal PCR duplicates        #
 // #    - calling haplotypes            #
-// #	- storing g.vcfs in GenomicsDB	  #
-// #					                          #
+// #	- storing g.vcfs in GenomicsDB	#                          #
 // ######################################
 
 params.help=""
@@ -18,7 +17,7 @@ if (params.help) {
         log.info " "
         log.info "This is Nextflow pipeline for sno processing. Most parameters are stored in file process.conf"
         log.info " "
-        log.info "Usage: nextflow run process.nf -c process.conf --ref --list --chrom --(other options)"
+        log.info "Usage: nextflow run process.nf -c process.config --ref --list --chrom --(other options)"
         log.info "Options:"
         log.info "--help\t[BOOLEAN]\tShow this help message"
         log.info "--ref\t[STRING]\tPath to the indexed referece fasta file [OBLIGATORY]"
@@ -32,7 +31,7 @@ if (params.help) {
 DAT = file("${params.list}")
 REF = file("${params.ref}")
 CHR = file("${params.chrom}")
-CONDA = file("$params.conda")
+CONDA = <your conda>
 
 // Create Input Channel
 SampleData = Channel.fromPath("${DAT}").splitCsv(header: ['SID','RID','P1','P2'], skip: 0, by:1, sep:",")
