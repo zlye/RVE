@@ -8,3 +8,4 @@ calling.nf
 process.conf
 process.nf
 
+Nextflow scripts 
