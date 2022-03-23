@@ -19,4 +19,4 @@ gridss_sample_processing.py
 
 merge_samples.py
 - merges SVs VCFs of individuals to group 
-- this script uses functions from write_merged.pys
+- this script uses functions from 'write_merged.pys'
