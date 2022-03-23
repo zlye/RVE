@@ -17,6 +17,10 @@ gridss_sample_processing.py
 - parses BND into duplications, deletion, insertions and copy number variable regions (complex rearrangement regions, where breakend intervals overlap within the sample)
 - this script uses functions from 'write_vcf.py', 'cnvr_functions.py'
 
+run_duphold.sh:
+- use duphold to annotate SVs in VCFs per sample (https://github.com/brentp/duphold/)
+- bam files for each sample are required
+
 merge_samples.py
-- merges SVs VCFs of individuals to group 
+- merges SVs VCFs of individuals to group, this is preformed after duphold filtering 
 - this script uses functions from 'write_merged.pys'
